@@ -40,6 +40,8 @@ async function configureNetRequest(tabId, domain) {
 
 chrome.action.onClicked.addListener(async (tab) => {
   const domain = new URL(tab.url).hostname;
+
+  // Remove response headers that block iframes
   await configureNetRequest(tab.id, domain);
 
   // Insert the JS file when the user turns the extension on
