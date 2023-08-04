@@ -1,5 +1,4 @@
 async function configureNetRequest(tabId, domain) {
-  console.log({ domain });
   const domains = [domain];
   const headers = [
     "X-Frame-Options",
