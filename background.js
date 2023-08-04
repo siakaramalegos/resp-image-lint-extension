@@ -42,8 +42,6 @@ async function configureNetRequest(tabId, domain) {
 chrome.action.onClicked.addListener(async (tab) => {
   const domain = new URL(tab.url).hostname;
   await configureNetRequest(tab.id, domain);
-  await chrome.tabs.update(tab.id, { url: tab.url });
-  console.log("reloaded");
 
   // Insert the JS file when the user turns the extension on
   await chrome.scripting.executeScript({
